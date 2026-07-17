@@ -1,0 +1,5 @@
+User-agent: *
+
+Allow: /
+
+Sitemap: https://viateurirasubiza-dotcom.github.io/E-LEARNING/sitemap.xmlS
