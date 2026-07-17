@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VIATEURLEARN | Lesson</title>
+
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Segoe UI",sans-serif;
+}
+
+
+body{
+
+background:#f1f5f9;
+color:#1e293b;
+
+}
+
+
+
+/* HEADER */
+
+header{
+
+height:80px;
+background:white;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 8%;
+box-shadow:0 5px 20px rgba(0,0,0,.1);
+
+}
+
+
+
+.logo{
+
+font-size:28px;
+font-weight:900;
+color:#2563eb;
+
+}
+
+
+
+nav a{
+
+margin-left:25px;
+text-decoration:none;
+color:#334155;
+font-weight:bold;
+
+}
+
+
+
+/* LAYOUT */
+
+
+.container{
+
+display:grid;
+grid-template-columns:2fr 1fr;
+gap:30px;
+padding:40px 8%;
+
+}
+
+
+
+
+/* VIDEO */
+
+
+.video-box{
+
+background:#000;
+height:420px;
+border-radius:25px;
+overflow:hidden;
+
+}
+
+
+video{
+
+width:100%;
+height:100%;
+
+}
+
+
+
+
+.card{
+
+background:white;
+padding:25px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+margin-top:25px;
+
+}
+
+
+
+
+
+h1{
+
+margin-bottom:15px;
+
+}
+
+
+
+
+.progress{
+
+height:10px;
+background:#e2e8f0;
+border-radius:20px;
+margin:15px 0;
+
+}
+
+
+
+.progress span{
+
+display:block;
+height:100%;
+width:65%;
+background:#2563eb;
+border-radius:20px;
+
+}
+
+
+
+
+/* SIDEBAR */
+
+
+.lesson-list div{
+
+padding:15px;
+border-bottom:1px solid #e2e8f0;
+cursor:pointer;
+
+}
+
+
+
+.lesson-list div:hover{
+
+background:#eff6ff;
+color:#2563eb;
+
+}
+
+
+
+
+
+button,
+.download{
+
+background:#2563eb;
+color:white;
+border:none;
+padding:13px 25px;
+border-radius:30px;
+cursor:pointer;
+text-decoration:none;
+display:inline-block;
+
+}
+
+
+
+
+
+.buttons{
+
+display:flex;
+gap:15px;
+margin-top:20px;
+
+}
+
+
+
+
+
+.comment{
+
+background:#f8fafc;
+padding:15px;
+border-radius:15px;
+margin-top:15px;
+
+}
+
+
+
+
+textarea{
+
+width:100%;
+padding:15px;
+border-radius:15px;
+border:1px solid #cbd5e1;
+
+}
+
+
+
+
+
+@media(max-width:900px){
+
+.container{
+
+grid-template-columns:1fr;
+
+}
+
+
+.video-box{
+
+height:250px;
+
+}
+
+}
+
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+
+
+<header>
+
+
+<div class="logo">
+🎓 VIATEURLEARN
+</div>
+
+
+
+<nav>
+
+<a href="student-dashboard.html">
+Dashboard
+</a>
+
+
+<a href="courses.html">
+Courses
+</a>
+
+
+</nav>
+
+
+
+</header>
+
+
+
+
+
+
+
+
+
+<div class="container">
+
+
+
+
+
+<div>
+
+
+
+
+<div class="video-box">
+
+
+<video controls>
+
+
+<source src="sample-video.mp4" type="video/mp4">
+
+
+Your browser does not support video.
+
+
+</video>
+
+
+</div>
+
+
+
+
+
+
+<div class="card">
+
+
+<h1>
+Lesson 2: HTML Fundamentals
+</h1>
+
+
+<p>
+
+Learn the basics of HTML structure,
+elements and creating your first webpage.
+
+</p>
+
+
+
+
+<div class="progress">
+
+<span></span>
+
+</div>
+
+
+<p>
+65% Course Completed
+</p>
+
+
+
+<div class="buttons">
+
+
+<button onclick="completeLesson()">
+
+✅ Mark Completed
+
+</button>
+
+
+
+<a class="download" href="#">
+
+📄 Download Notes
+
+</a>
+
+
+</div>
+
+
+
+<p id="message"></p>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="card">
+
+
+<h2>
+💬 Student Comments
+</h2>
+
+
+
+<div class="comment">
+
+<b>
+Jean Claude
+</b>
+
+<br>
+
+Great lesson! I understood HTML.
+
+</div>
+
+
+
+
+
+<div class="comment">
+
+<b>
+Aline
+</b>
+
+<br>
+
+Very clear explanation.
+
+</div>
+
+
+
+
+<br>
+
+
+<textarea placeholder="Write your comment..."></textarea>
+
+
+<br><br>
+
+
+<button>
+Send Comment
+</button>
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div>
+
+
+
+<div class="card">
+
+
+<h2>
+📚 Course Lessons
+</h2>
+
+
+
+<div class="lesson-list">
+
+
+<div>
+✅ Lesson 1: Introduction
+</div>
+
+
+<div>
+▶ Lesson 2: HTML Fundamentals
+</div>
+
+
+<div>
+🔒 Lesson 3: CSS Design
+</div>
+
+
+<div>
+🔒 Lesson 4: JavaScript
+</div>
+
+
+<div>
+🔒 Lesson 5: Final Project
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="card">
+
+
+<h2>
+👨‍🏫 Instructor
+</h2>
+
+
+<p>
+Viateur Irasubiza
+</p>
+
+
+<p>
+Computer Science Teacher
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="card">
+
+
+<h2>
+📊 Your Progress
+</h2>
+
+
+<h1>
+65%
+</h1>
+
+
+<p>
+Keep learning 🚀
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<script>
+
+
+function completeLesson(){
+
+
+document.getElementById("message").innerHTML=
+"🎉 Lesson completed successfully!";
+
+
+}
+
+
+
+</script>
+
+
+
+
+</body>
+
+</html>
