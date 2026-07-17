@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VIATEURLEARN | Profile</title>
+
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Segoe UI",sans-serif;
+}
+
+
+
+body{
+
+background:#f1f5f9;
+color:#1e293b;
+
+}
+
+
+
+/* HEADER */
+
+header{
+
+background:#0f172a;
+color:white;
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+}
+
+
+
+.logo{
+
+font-size:28px;
+font-weight:900;
+color:#60a5fa;
+
+}
+
+
+
+header a{
+
+color:white;
+text-decoration:none;
+margin-left:20px;
+
+}
+
+
+
+
+
+.container{
+
+padding:40px 8%;
+
+}
+
+
+
+
+.profile-card{
+
+background:
+linear-gradient(
+135deg,
+#2563eb,
+#0f172a
+);
+
+color:white;
+padding:40px;
+border-radius:30px;
+
+display:flex;
+align-items:center;
+gap:30px;
+
+}
+
+
+
+
+
+.profile-card img{
+
+width:150px;
+height:150px;
+border-radius:50%;
+border:5px solid white;
+
+}
+
+
+
+
+.profile-card h1{
+
+font-size:40px;
+
+}
+
+
+
+
+.grid{
+
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
+
+gap:25px;
+margin-top:30px;
+
+}
+
+
+
+
+
+.card{
+
+background:white;
+padding:30px;
+border-radius:25px;
+box-shadow:
+0 10px 25px rgba(0,0,0,.08);
+
+}
+
+
+
+
+.card h2{
+
+margin-bottom:20px;
+
+}
+
+
+
+
+.stat{
+
+text-align:center;
+
+}
+
+
+
+.stat h1{
+
+font-size:45px;
+color:#2563eb;
+
+}
+
+
+
+
+.progress{
+
+height:12px;
+background:#e2e8f0;
+border-radius:20px;
+
+}
+
+
+
+.progress span{
+
+display:block;
+height:100%;
+width:80%;
+background:#2563eb;
+border-radius:20px;
+
+}
+
+
+
+
+
+.course{
+
+padding:15px;
+background:#f8fafc;
+border-radius:15px;
+margin-bottom:15px;
+
+}
+
+
+
+
+button{
+
+background:#2563eb;
+color:white;
+border:none;
+padding:14px 30px;
+border-radius:30px;
+cursor:pointer;
+
+}
+
+
+
+input{
+
+width:100%;
+padding:14px;
+margin:10px 0;
+border-radius:10px;
+border:1px solid #cbd5e1;
+
+}
+
+
+
+
+
+@media(max-width:700px){
+
+
+.profile-card{
+
+flex-direction:column;
+text-align:center;
+
+}
+
+
+}
+
+
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+
+<header>
+
+
+<div class="logo">
+
+🎓 VIATEURLEARN
+
+</div>
+
+
+
+<nav>
+
+
+<a href="student-dashboard.html">
+Dashboard
+</a>
+
+
+<a href="courses.html">
+Courses
+</a>
+
+
+</nav>
+
+
+</header>
+
+
+
+
+
+
+
+
+<div class="container">
+
+
+
+
+
+<div class="profile-card">
+
+
+<img src="https://i.pravatar.cc/300">
+
+
+
+<div>
+
+
+<h1>
+Viateur Irasubiza
+</h1>
+
+
+<p>
+Computer Science Student
+</p>
+
+
+<p>
+📍 Rwanda
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="grid">
+
+
+
+<div class="card stat">
+
+<h1>
+12
+</h1>
+
+<p>
+Courses Completed
+</p>
+
+</div>
+
+
+
+
+
+<div class="card stat">
+
+<h1>
+8
+</h1>
+
+<p>
+Certificates
+</p>
+
+</div>
+
+
+
+
+
+
+<div class="card stat">
+
+<h1>
+95%
+</h1>
+
+<p>
+Average Score
+</p>
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="grid">
+
+
+
+
+
+<div class="card">
+
+
+<h2>
+👤 Personal Information
+</h2>
+
+
+<p>
+Name: Viateur Irasubiza
+</p>
+
+<br>
+
+
+<p>
+Email: viateur@email.com
+</p>
+
+
+<br>
+
+
+<p>
+Role: Student
+</p>
+
+
+<br>
+
+
+<button>
+Edit Profile
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="card">
+
+
+<h2>
+🚀 Learning Progress
+</h2>
+
+
+<p>
+Web Development</p>
+
+
+<div class="progress">
+<span></span>
+</div>
+
+
+<br>
+
+
+<p>
+Python Programming</p>
+
+
+<div class="progress">
+<span style="width:60%"></span>
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="card">
+
+
+<h2>
+📚 My Courses
+</h2>
+
+
+
+<div class="course">
+
+💻 Full Stack Web Development
+
+</div>
+
+
+
+<div class="course">
+
+🐍 Python Programming
+
+</div>
+
+
+
+
+<div class="course">
+
+🤖 Artificial Intelligence
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="card">
+
+
+<h2>
+🏆 Certificates
+</h2>
+
+
+
+<div class="course">
+
+Certificate: Web Development
+
+</div>
+
+
+<div class="course">
+
+Certificate: Python Programming
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="card">
+
+
+<h2>
+🔐 Change Password
+</h2>
+
+
+
+<input placeholder="Current Password" type="password">
+
+
+<input placeholder="New Password" type="password">
+
+
+<input placeholder="Confirm Password" type="password">
+
+
+<button>
+Update Password
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+</body>
+
+</html>
