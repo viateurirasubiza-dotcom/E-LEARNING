@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VIATEURLEARN | Quiz Center</title>
+
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Segoe UI",sans-serif;
+}
+
+
+body{
+
+background:#f1f5f9;
+color:#1e293b;
+
+}
+
+
+
+header{
+
+background:#0f172a;
+color:white;
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+}
+
+
+.logo{
+
+font-size:28px;
+font-weight:900;
+color:#60a5fa;
+
+}
+
+
+nav a{
+
+color:white;
+text-decoration:none;
+margin-left:20px;
+
+}
+
+
+
+
+
+.container{
+
+padding:40px 8%;
+
+}
+
+
+
+
+.quiz-header{
+
+background:linear-gradient(
+135deg,
+#2563eb,
+#0f172a
+);
+
+color:white;
+padding:40px;
+border-radius:25px;
+text-align:center;
+
+}
+
+
+
+.quiz-header h1{
+
+font-size:45px;
+
+}
+
+
+
+
+
+.categories{
+
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(220px,1fr));
+
+gap:25px;
+margin-top:40px;
+
+}
+
+
+
+
+.category{
+
+background:white;
+padding:30px;
+border-radius:20px;
+text-align:center;
+cursor:pointer;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+transition:.3s;
+
+}
+
+
+
+.category:hover{
+
+transform:translateY(-10px);
+background:#eff6ff;
+
+}
+
+
+
+.quiz-box{
+
+background:white;
+padding:35px;
+border-radius:25px;
+margin-top:40px;
+display:none;
+
+}
+
+
+
+.timer{
+
+background:#fee2e2;
+color:#dc2626;
+padding:12px 25px;
+border-radius:30px;
+display:inline-block;
+font-weight:bold;
+
+}
+
+
+
+
+.progress{
+
+height:12px;
+background:#e2e8f0;
+border-radius:20px;
+margin:20px 0;
+
+}
+
+
+.progress span{
+
+display:block;
+height:100%;
+background:#2563eb;
+width:0%;
+border-radius:20px;
+
+}
+
+
+
+
+.question{
+
+margin-top:25px;
+
+}
+
+
+
+.option{
+
+background:#f8fafc;
+padding:15px;
+border-radius:15px;
+margin:10px 0;
+cursor:pointer;
+border:1px solid #e2e8f0;
+
+}
+
+
+
+.option:hover{
+
+background:#dbeafe;
+
+}
+
+
+
+.selected{
+
+background:#2563eb;
+color:white;
+
+}
+
+
+
+
+button{
+
+background:#2563eb;
+color:white;
+border:none;
+padding:15px 35px;
+border-radius:30px;
+cursor:pointer;
+font-weight:bold;
+margin-top:20px;
+
+}
+
+
+
+
+.result{
+
+display:none;
+background:white;
+padding:40px;
+border-radius:25px;
+margin-top:40px;
+text-align:center;
+
+}
+
+
+
+.score{
+
+font-size:60px;
+color:#2563eb;
+font-weight:bold;
+
+}
+
+
+
+.pass{
+
+color:#16a34a;
+
+}
+
+
+
+.fail{
+
+color:#dc2626;
+
+}
+
+
+
+
+</style>
+
+</head>
+
+
+
+<body>
+
+
+
+<header>
+
+
+<div class="logo">
+
+🎓 VIATEURLEARN
+
+</div>
+
+
+
+<nav>
+
+<a href="student-dashboard.html">
+Dashboard
+</a>
+
+<a href="courses.html">
+Courses
+</a>
+
+
+</nav>
+
+
+</header>
+
+
+
+
+
+
+
+<div class="container">
+
+
+
+<div class="quiz-header">
+
+
+<h1>
+📝 VIATEURLEARN Quiz Center
+</h1>
+
+
+<p>
+Test your knowledge and earn certificates
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="categories">
+
+
+<div class="category" onclick="startQuiz('math')">
+
+➗
+<h2>Mathematics</h2>
+
+<p>10 Questions</p>
+
+</div>
+
+
+
+
+
+<div class="category" onclick="startQuiz('programming')">
+
+💻
+
+<h2>Programming</h2>
+
+<p>10 Questions</p>
+
+</div>
+
+
+
+
+
+
+<div class="category" onclick="startQuiz('cs')">
+
+🖥️
+
+<h2>Computer Science</h2>
+
+<p>10 Questions</p>
+
+</div>
+
+
+
+
+
+
+<div class="category" onclick="startQuiz('ai')">
+
+🤖
+
+<h2>Artificial Intelligence</h2>
+
+<p>10 Questions</p>
+
+</div>
+
+
+
+
+
+
+
+<div class="category" onclick="startQuiz('english')">
+
+🇬🇧
+
+<h2>English</h2>
+
+<p>10 Questions</p>
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="quiz-box" id="quizBox">
+
+
+
+<div class="timer">
+
+Time:
+<span id="time">
+60
+</span>
+Seconds
+
+</div>
+
+
+
+<div class="progress">
+
+<span id="bar"></span>
+
+</div>
+
+
+
+
+<h2 id="quizTitle"></h2>
+
+
+
+<div id="questionArea"></div>
+
+
+
+<button onclick="nextQuestion()">
+
+Next Question
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="result" id="result">
+
+
+<h1>
+Quiz Completed 🎉
+</h1>
+
+
+<div class="score" id="score">
+
+</div>
+
+
+<h2 id="message">
+
+</h2>
+
+
+<button onclick="location.reload()">
+
+Try Again
+
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<script>
+
+
+
+let questions=[];
+
+let current=0;
+
+let score=0;
+
+let selected=null;
+
+let timer;
+
+let time=60;
+
+
+
+
+
+const quizData={
+
+
+
+math:[
+
+{
+q:"What is 5 × 5?",
+a:["10","20","25","30"],
+c:2
+},
+
+{
+q:"Derivative of x² is?",
+a:["x","2x","3x","x²"],
+c:1
+},
+
+{
+q:"Triangle has how many sides?",
+a:["2","3","4","5"],
+c:1
+}
+
+],
+
+
+
+
+programming:[
+
+{
+q:"HTML is used for?",
+a:["Database","Structure Web","Design","Server"],
+c:1
+},
+
+
+{
+q:"JavaScript is a?",
+a:["Language","Browser","Database","OS"],
+c:0
+}
+
+],
+
+
+
+
+cs:[
+
+{
+q:"CPU means?",
+a:[
+"Central Processing Unit",
+"Computer Power User",
+"Control Program Unit",
+"None"
+],
+c:0
+},
+
+
+{
+q:"RAM is?",
+a:[
+"Permanent memory",
+"Temporary memory",
+"Software",
+"Network"
+],
+c:1
+}
+
+],
+
+
+
+
+
+ai:[
+
+{
+q:"AI means?",
+a:[
+"Artificial Intelligence",
+"Automatic Internet",
+"Advanced Input",
+"None"
+],
+c:0
+}
+
+
+],
+
+
+
+
+
+english:[
+
+{
+q:"Opposite of Hot?",
+a:[
+"Cold",
+"Warm",
+"Fire",
+"Heat"
+],
+c:0
+}
+
+
+]
+
+
+
+};
+
+
+
+
+
+
+
+
+function startQuiz(type){
+
+
+questions=quizData[type];
+
+current=0;
+
+score=0;
+
+
+document.querySelector(".categories").style.display="none";
+
+document.getElementById("quizBox").style.display="block";
+
+
+showQuestion();
+
+
+timer=setInterval(()=>{
+
+
+time--;
+
+
+document.getElementById("time").innerHTML=time;
+
+
+
+if(time<=0){
+
+finishQuiz();
+
+}
+
+
+
+},1000);
+
+
+
+}
+
+
+
+
+
+
+
+
+function showQuestion(){
+
+
+
+let q=questions[current];
+
+
+document.getElementById("quizTitle").innerHTML=
+
+"Question "+(current+1);
+
+
+
+let html=
+
+"<h2>"+q.q+"</h2>";
+
+
+
+q.a.forEach((x,i)=>{
+
+
+html+=`
+
+<div class="option" onclick="choose(${i})">
+
+${x}
+
+</div>
+
+`;
+
+});
+
+
+
+document.getElementById("questionArea").innerHTML=html;
+
+
+document.getElementById("bar").style.width=
+
+((current/questions.length)*100)+"%";
+
+
+
+}
+
+
+
+
+
+
+function choose(i){
+
+
+selected=i;
+
+
+let options=document.querySelectorAll(".option");
+
+
+options.forEach(x=>x.classList.remove("selected"));
+
+
+options[i].classList.add("selected");
+
+
+
+}
+
+
+
+
+
+
+
+
+function nextQuestion(){
+
+
+if(selected===null){
+
+alert("Choose answer");
+
+return;
+
+}
+
+
+
+if(selected==questions[current].c){
+
+score++;
+
+}
+
+
+
+selected=null;
+
+
+current++;
+
+
+
+if(current<questions.length){
+
+showQuestion();
+
+}else{
+
+
+finishQuiz();
+
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+function finishQuiz(){
+
+
+clearInterval(timer);
+
+
+document.getElementById("quizBox").style.display="none";
+
+
+document.getElementById("result").style.display="block";
+
+
+
+let percent=
+
+Math.round((score/questions.length)*100);
+
+
+
+document.getElementById("score").innerHTML=
+
+percent+"%";
+
+
+
+if(percent>=70){
+
+document.getElementById("message").innerHTML=
+
+"🎓 Passed! Certificate unlocked";
+
+
+}else{
+
+
+document.getElementById("message").innerHTML=
+
+"❌ Failed. Try again";
+
+
+}
+
+
+
+}
+
+
+
+</script>
+
+
+
+</body>
+
+</html>
