@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VIATEURLEARN | Messages</title>
+
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Segoe UI",sans-serif;
+}
+
+
+body{
+
+background:#e2e8f0;
+
+}
+
+
+
+/* HEADER */
+
+header{
+
+height:75px;
+background:#0f172a;
+color:white;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 5%;
+
+}
+
+
+.logo{
+
+font-size:28px;
+font-weight:900;
+color:#60a5fa;
+
+}
+
+
+
+header a{
+
+color:white;
+text-decoration:none;
+
+}
+
+
+
+/* CHAT AREA */
+
+
+.chat-container{
+
+height:calc(100vh - 75px);
+display:grid;
+grid-template-columns:320px 1fr;
+
+}
+
+
+
+/* USERS */
+
+
+.users{
+
+background:white;
+border-right:1px solid #cbd5e1;
+padding:20px;
+
+}
+
+
+
+.search{
+
+width:100%;
+padding:15px;
+border-radius:30px;
+border:1px solid #cbd5e1;
+margin-bottom:20px;
+
+}
+
+
+
+
+.user{
+
+display:flex;
+align-items:center;
+gap:15px;
+padding:15px;
+border-radius:15px;
+cursor:pointer;
+
+}
+
+
+
+.user:hover{
+
+background:#eff6ff;
+
+}
+
+
+
+.user img{
+
+width:50px;
+height:50px;
+border-radius:50%;
+
+}
+
+
+
+.online{
+
+color:#16a34a;
+font-size:13px;
+
+}
+
+
+
+
+
+/* CHAT */
+
+
+.chat{
+
+display:flex;
+flex-direction:column;
+
+}
+
+
+
+.chat-header{
+
+background:white;
+padding:20px;
+display:flex;
+align-items:center;
+gap:15px;
+
+}
+
+
+
+.chat-header img{
+
+width:55px;
+height:55px;
+border-radius:50%;
+
+}
+
+
+
+.messages{
+
+flex:1;
+padding:25px;
+overflow-y:auto;
+
+}
+
+
+
+
+.message{
+
+max-width:60%;
+padding:15px;
+border-radius:20px;
+margin-bottom:15px;
+
+}
+
+
+
+
+.sent{
+
+background:#2563eb;
+color:white;
+margin-left:auto;
+border-bottom-right-radius:5px;
+
+}
+
+
+
+.received{
+
+background:white;
+border-bottom-left-radius:5px;
+
+}
+
+
+
+
+
+.time{
+
+font-size:11px;
+opacity:.7;
+margin-top:5px;
+
+}
+
+
+
+
+
+/* INPUT */
+
+
+.input-area{
+
+background:white;
+padding:20px;
+display:flex;
+gap:15px;
+
+}
+
+
+
+.input-area input{
+
+flex:1;
+padding:15px;
+border-radius:30px;
+border:1px solid #cbd5e1;
+
+}
+
+
+
+
+button{
+
+background:#2563eb;
+color:white;
+border:none;
+padding:15px 25px;
+border-radius:30px;
+cursor:pointer;
+
+}
+
+
+
+
+.attach{
+
+background:#e2e8f0;
+color:#0f172a;
+
+}
+
+
+
+
+
+@media(max-width:800px){
+
+.chat-container{
+
+grid-template-columns:1fr;
+
+}
+
+
+.users{
+
+display:none;
+
+}
+
+
+}
+
+
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+
+<header>
+
+
+<div class="logo">
+
+🎓 VIATEURLEARN
+
+</div>
+
+
+
+<a href="student-dashboard.html">
+
+Dashboard
+
+</a>
+
+
+</header>
+
+
+
+
+
+
+
+<div class="chat-container">
+
+
+
+
+
+<!-- USERS -->
+
+
+<div class="users">
+
+
+<input class="search"
+placeholder="🔍 Search people">
+
+
+
+
+
+
+<div class="user">
+
+
+<img src="https://i.pravatar.cc/100?img=12">
+
+
+<div>
+
+<b>
+Teacher John
+</b>
+
+<br>
+
+<span class="online">
+● Online
+</span>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="user">
+
+
+<img src="https://i.pravatar.cc/100?img=22">
+
+
+<div>
+
+<b>
+AI Instructor
+</b>
+
+
+<br>
+
+<span class="online">
+● Online
+</span>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="user">
+
+
+<img src="https://i.pravatar.cc/100?img=32">
+
+
+<div>
+
+<b>
+Admin
+</b>
+
+
+<br>
+
+<span>
+Offline
+</span>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<!-- CHAT -->
+
+
+
+<div class="chat">
+
+
+
+<div class="chat-header">
+
+
+<img src="https://i.pravatar.cc/100?img=12">
+
+
+<div>
+
+<h3>
+Teacher John
+</h3>
+
+<p>
+Computer Science Instructor
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="messages" id="messages">
+
+
+
+
+
+<div class="message received">
+
+Hello Viateur 👋
+Welcome to Web Development course.
+
+<div class="time">
+10:30 AM
+</div>
+
+</div>
+
+
+
+
+
+
+
+<div class="message sent">
+
+Thank you teacher.
+I have a question about JavaScript.
+
+<div class="time">
+10:32 AM
+</div>
+
+</div>
+
+
+
+
+
+
+
+<div class="message received">
+
+Sure, ask your question.
+
+<div class="time">
+10:33 AM
+</div>
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="input-area">
+
+
+<button class="attach">
+
+📎
+
+</button>
+
+
+<input id="msg"
+placeholder="Write a message...">
+
+
+
+<button onclick="sendMessage()">
+
+Send
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<script>
+
+
+function sendMessage(){
+
+
+let input=document.getElementById("msg");
+
+let text=input.value;
+
+
+if(text=="") return;
+
+
+
+let box=document.getElementById("messages");
+
+
+
+box.innerHTML+=`
+
+<div class="message sent">
+
+${text}
+
+<div class="time">
+
+Now
+
+</div>
+
+</div>
+
+`;
+
+
+
+input.value="";
+
+
+box.scrollTop=box.scrollHeight;
+
+
+}
+
+
+
+</script>
+
+
+
+</body>
+
+</html>
