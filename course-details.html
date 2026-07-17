@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VIATEURLEARN | Course Details</title>
+
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Segoe UI",sans-serif;
+}
+
+
+body{
+
+background:#f8fafc;
+color:#1e293b;
+
+}
+
+
+
+/* NAVBAR */
+
+header{
+
+height:80px;
+background:white;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:0 8%;
+box-shadow:0 5px 20px rgba(0,0,0,.1);
+
+}
+
+
+.logo{
+
+font-size:28px;
+font-weight:900;
+color:#2563eb;
+
+}
+
+
+nav a{
+
+text-decoration:none;
+margin-left:25px;
+color:#334155;
+font-weight:bold;
+
+}
+
+
+.join{
+
+background:#2563eb;
+color:white;
+padding:12px 25px;
+border-radius:30px;
+
+}
+
+
+
+/* HERO */
+
+.hero{
+
+background:linear-gradient(
+135deg,
+#2563eb,
+#0f172a
+);
+
+color:white;
+padding:70px 8%;
+display:flex;
+gap:40px;
+align-items:center;
+
+}
+
+
+
+.hero img{
+
+width:420px;
+height:250px;
+object-fit:cover;
+border-radius:25px;
+
+}
+
+
+
+.hero-text{
+
+flex:1;
+
+}
+
+
+
+.hero h1{
+
+font-size:50px;
+
+}
+
+
+.hero p{
+
+font-size:18px;
+margin:20px 0;
+
+}
+
+
+
+.enroll{
+
+display:inline-block;
+background:white;
+color:#2563eb;
+padding:15px 35px;
+border-radius:30px;
+text-decoration:none;
+font-weight:bold;
+
+}
+
+
+
+
+
+/* MAIN */
+
+.container{
+
+padding:50px 8%;
+
+}
+
+
+
+
+.grid{
+
+display:grid;
+grid-template-columns:
+2fr 1fr;
+
+gap:35px;
+
+}
+
+
+
+
+.card{
+
+background:white;
+padding:30px;
+border-radius:25px;
+box-shadow:
+0 10px 30px rgba(0,0,0,.08);
+
+margin-bottom:30px;
+
+}
+
+
+
+
+.card h2{
+
+margin-bottom:20px;
+
+}
+
+
+
+
+/* LESSONS */
+
+
+.lesson{
+
+padding:15px;
+border-bottom:1px solid #e2e8f0;
+display:flex;
+justify-content:space-between;
+
+}
+
+
+
+.lesson span{
+
+color:#2563eb;
+
+}
+
+
+
+
+/* INSTRUCTOR */
+
+
+.instructor{
+
+display:flex;
+align-items:center;
+gap:20px;
+
+}
+
+
+
+.instructor img{
+
+width:80px;
+height:80px;
+border-radius:50%;
+
+}
+
+
+
+
+/* LEARN */
+
+.learn li{
+
+margin:12px 0;
+
+}
+
+
+
+
+/* SIDEBAR */
+
+
+.price{
+
+font-size:35px;
+font-weight:bold;
+color:#2563eb;
+
+}
+
+
+
+.buy{
+
+display:block;
+background:#2563eb;
+color:white;
+text-align:center;
+padding:15px;
+border-radius:30px;
+text-decoration:none;
+margin-top:20px;
+
+}
+
+
+
+
+.rating{
+
+color:#f59e0b;
+font-size:20px;
+
+}
+
+
+
+
+
+@media(max-width:900px){
+
+
+.hero{
+
+flex-direction:column;
+
+}
+
+
+.grid{
+
+grid-template-columns:1fr;
+
+}
+
+
+.hero img{
+
+width:100%;
+
+}
+
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+
+
+<header>
+
+
+<div class="logo">
+
+🎓 VIATEURLEARN
+
+</div>
+
+
+
+<nav>
+
+
+<a href="index.html">
+Home
+</a>
+
+
+<a href="courses.html">
+Courses
+</a>
+
+
+<a href="login.html">
+Login
+</a>
+
+
+<a href="register.html" class="join">
+Join
+</a>
+
+
+</nav>
+
+
+</header>
+
+
+
+
+
+
+
+
+<section class="hero">
+
+
+<div class="hero-text">
+
+
+<h1>
+Full Stack Web Development
+</h1>
+
+
+<p>
+Master HTML, CSS, JavaScript, Backend Development,
+Databases and Build Real World Applications.
+</p>
+
+
+<div class="rating">
+
+⭐⭐⭐⭐⭐ (4.9)
+
+</div>
+
+
+<br>
+
+
+<a href="#" class="enroll">
+Enroll Now 🚀
+</a>
+
+
+
+</div>
+
+
+
+
+<img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6">
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<div class="container">
+
+
+
+<div class="grid">
+
+
+
+
+
+<div>
+
+
+
+
+
+<div class="card">
+
+
+<h2>
+📚 About This Course
+</h2>
+
+
+<p>
+
+This course teaches students how to design and develop
+modern websites and web applications from beginner
+to professional level.
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="card">
+
+
+<h2>
+🎯 What You Will Learn
+</h2>
+
+
+<ul class="learn">
+
+
+<li>✅ HTML5 Website Structure</li>
+
+<li>✅ CSS3 Modern Designs</li>
+
+<li>✅ JavaScript Programming</li>
+
+<li>✅ Backend Development</li>
+
+<li>✅ Database Integration</li>
+
+<li>✅ Deploy Real Applications</li>
+
+
+</ul>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="card">
+
+
+<h2>
+🎥 Course Lessons
+</h2>
+
+
+
+
+<div class="lesson">
+
+<span>
+Lesson 1
+</span>
+
+Introduction to Web Development
+
+</div>
+
+
+
+
+<div class="lesson">
+
+<span>
+Lesson 2
+</span>
+
+HTML Fundamentals
+
+</div>
+
+
+
+
+<div class="lesson">
+
+<span>
+Lesson 3
+</span>
+
+CSS Design
+
+</div>
+
+
+
+
+
+<div class="lesson">
+
+<span>
+Lesson 4
+</span>
+
+JavaScript Programming
+
+</div>
+
+
+
+
+
+<div class="lesson">
+
+<span>
+Lesson 5
+</span>
+
+Building Final Project
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div>
+
+
+
+
+
+<div class="card">
+
+
+<h2>
+💳 Course Price
+</h2>
+
+
+<div class="price">
+
+$49
+
+</div>
+
+
+<a class="buy">
+
+Enroll Course
+
+</a>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="card">
+
+
+<h2>
+👨‍🏫 Instructor
+</h2>
+
+
+
+<div class="instructor">
+
+
+<img src="https://i.pravatar.cc/100">
+
+
+<div>
+
+<h3>
+Viateur Irasubiza
+</h3>
+
+
+<p>
+Computer Science Teacher
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="card">
+
+
+<h2>
+📊 Course Info
+</h2>
+
+
+<p>
+📌 Level: Beginner - Advanced
+</p>
+
+<br>
+
+<p>
+⏱ Duration: 40 Hours
+</p>
+
+
+<br>
+
+<p>
+🎓 Certificate Included
+</p>
+
+
+<br>
+
+<p>
+👨‍🎓 Students: 2,500+
+</p>
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+</body>
+
+</html>
