@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VIATEURLEARN | Courses</title>
+
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+
+body{
+background:#f8fafc;
+color:#1e293b;
+}
+
+
+/* NAVBAR */
+
+header{
+
+height:80px;
+background:white;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:0 8%;
+box-shadow:0 5px 20px rgba(0,0,0,.1);
+
+}
+
+
+.logo{
+
+font-size:28px;
+font-weight:900;
+color:#2563eb;
+
+}
+
+
+nav a{
+
+text-decoration:none;
+margin-left:25px;
+color:#334155;
+font-weight:600;
+
+}
+
+
+.join{
+
+background:#2563eb;
+color:white;
+padding:12px 25px;
+border-radius:30px;
+
+}
+
+
+
+/* HERO */
+
+
+.hero{
+
+background:linear-gradient(135deg,#2563eb,#0f172a);
+padding:80px 8%;
+text-align:center;
+color:white;
+
+}
+
+
+.hero h1{
+
+font-size:55px;
+
+}
+
+
+.hero p{
+
+font-size:20px;
+margin-top:15px;
+
+}
+
+
+
+/* SEARCH */
+
+
+.search{
+
+padding:40px 8%;
+text-align:center;
+
+}
+
+
+
+.search input{
+
+width:70%;
+padding:18px 25px;
+border-radius:40px;
+border:1px solid #cbd5e1;
+font-size:17px;
+
+}
+
+
+
+
+
+/* FILTER */
+
+
+.filters{
+
+padding:0 8%;
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+
+}
+
+
+.filters button{
+
+padding:12px 25px;
+border:none;
+border-radius:30px;
+background:#dbeafe;
+cursor:pointer;
+font-weight:bold;
+
+}
+
+
+.filters button:hover{
+
+background:#2563eb;
+color:white;
+
+}
+
+
+
+
+/* COURSE GRID */
+
+
+.container{
+
+padding:50px 8%;
+
+}
+
+
+
+.grid{
+
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+
+}
+
+
+
+
+
+.card{
+
+background:white;
+border-radius:25px;
+overflow:hidden;
+box-shadow:
+0 15px 35px rgba(0,0,0,.08);
+
+transition:.4s;
+
+}
+
+
+
+.card:hover{
+
+transform:translateY(-10px);
+
+}
+
+
+
+.card img{
+
+width:100%;
+height:180px;
+object-fit:cover;
+
+}
+
+
+
+.content{
+
+padding:25px;
+
+}
+
+
+
+.tag{
+
+display:inline-block;
+background:#dbeafe;
+color:#2563eb;
+padding:7px 15px;
+border-radius:20px;
+font-size:13px;
+
+}
+
+
+.content h2{
+
+margin:15px 0;
+
+}
+
+
+
+.rating{
+
+color:#f59e0b;
+margin:10px 0;
+
+}
+
+
+
+.learn{
+
+display:block;
+background:#2563eb;
+color:white;
+padding:12px;
+border-radius:30px;
+text-align:center;
+text-decoration:none;
+margin-top:20px;
+
+}
+
+
+
+
+/* FOOTER */
+
+
+footer{
+
+background:#0f172a;
+color:white;
+padding:30px;
+text-align:center;
+margin-top:50px;
+
+}
+
+
+
+
+@media(max-width:700px){
+
+
+nav{
+
+display:none;
+
+}
+
+
+.hero h1{
+
+font-size:35px;
+
+}
+
+
+.search input{
+
+width:90%;
+
+}
+
+
+}
+
+
+</style>
+
+</head>
+
+
+
+<body>
+
+
+
+
+<header>
+
+
+<div class="logo">
+
+🎓 VIATEURLEARN
+
+</div>
+
+
+
+<nav>
+
+<a href="index.html">
+Home
+</a>
+
+
+<a href="courses.html">
+Courses
+</a>
+
+
+<a href="login.html">
+Login
+</a>
+
+
+<a href="register.html" class="join">
+Join
+</a>
+
+
+</nav>
+
+
+</header>
+
+
+
+
+
+
+
+<section class="hero">
+
+
+<h1>
+Explore Your Courses 🚀
+</h1>
+
+
+<p>
+Learn skills for your future career
+</p>
+
+
+</section>
+
+
+
+
+
+
+<section class="search">
+
+
+<input 
+id="search"
+onkeyup="searchCourse()"
+placeholder="🔍 Search courses...">
+
+
+</section>
+
+
+
+
+
+
+
+<div class="filters">
+
+
+<button onclick="filterCourse('all')">
+All
+</button>
+
+
+<button onclick="filterCourse('technology')">
+Technology
+</button>
+
+
+<button onclick="filterCourse('math')">
+Mathematics
+</button>
+
+
+<button onclick="filterCourse('language')">
+Languages
+</button>
+
+
+<button onclick="filterCourse('business')">
+Business
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+<section class="container">
+
+
+<div class="grid" id="courses">
+
+
+
+
+
+<div class="card math">
+
+<img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb">
+
+<div class="content">
+
+<span class="tag">
+Mathematics
+</span>
+
+<h2>
+Advanced Mathematics
+</h2>
+
+<p>
+Algebra, Calculus, Geometry and Statistics.
+</p>
+
+<div class="rating">
+⭐⭐⭐⭐⭐
+</div>
+
+<a class="learn">
+Start Course
+</a>
+
+</div>
+
+</div>
+
+
+
+
+
+
+<div class="card technology">
+
+<img src="https://images.unsplash.com/photo-1518770660439-4636190af475">
+
+
+<div class="content">
+
+<span class="tag">
+Computer Science
+</span>
+
+<h2>
+Computer Science
+</h2>
+
+<p>
+Programming and Algorithms.
+</p>
+
+<div class="rating">
+⭐⭐⭐⭐⭐
+</div>
+
+<a class="learn">
+Start Course
+</a>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+<div class="card technology">
+
+<img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6">
+
+
+<div class="content">
+
+<span class="tag">
+Web Development
+</span>
+
+
+<h2>
+Full Stack Web Development
+</h2>
+
+
+<p>
+HTML, CSS, JavaScript, Backend.
+</p>
+
+
+<div class="rating">
+⭐⭐⭐⭐⭐
+</div>
+
+
+<a class="learn">
+Start Course
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="card technology">
+
+
+<img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5">
+
+
+<div class="content">
+
+
+<span class="tag">
+Python
+</span>
+
+
+<h2>
+Python Programming
+</h2>
+
+
+<p>
+Beginner to advanced Python.
+</p>
+
+
+<div class="rating">
+⭐⭐⭐⭐⭐
+</div>
+
+
+<a class="learn">
+Start Course
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="card technology">
+
+
+<img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e">
+
+
+<div class="content">
+
+
+<span class="tag">
+Artificial Intelligence
+</span>
+
+
+<h2>
+AI & Machine Learning
+</h2>
+
+
+<p>
+Build intelligent applications.
+</p>
+
+
+<div class="rating">
+⭐⭐⭐⭐⭐
+</div>
+
+
+<a class="learn">
+Start Course
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="card technology">
+
+
+<img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31">
+
+
+<div class="content">
+
+
+<span class="tag">
+Cyber Security
+</span>
+
+
+<h2>
+Cyber Security
+</h2>
+
+
+<p>
+Network and security basics.
+</p>
+
+
+<div class="rating">
+⭐⭐⭐⭐
+</div>
+
+
+<a class="learn">
+Start Course
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="card technology">
+
+
+<img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71">
+
+
+<div class="content">
+
+
+<span class="tag">
+Data Science
+</span>
+
+
+<h2>
+Data Science
+</h2>
+
+
+<p>
+Data analysis and visualization.
+</p>
+
+
+<div class="rating">
+⭐⭐⭐⭐⭐
+</div>
+
+
+<a class="learn">
+Start Course
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="card language">
+
+
+<img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d">
+
+
+<div class="content">
+
+
+<span class="tag">
+English
+</span>
+
+
+<h2>
+English Communication
+</h2>
+
+
+<p>
+Speaking and writing skills.
+</p>
+
+
+<div class="rating">
+⭐⭐⭐⭐⭐
+</div>
+
+
+<a class="learn">
+Start Course
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="card language">
+
+
+<img src="https://images.unsplash.com/photo-1502920917128-1aa500764cbd">
+
+
+<div class="content">
+
+
+<span class="tag">
+French
+</span>
+
+
+<h2>
+French Language
+</h2>
+
+
+<p>
+Learn French conversation.
+</p>
+
+
+<div class="rating">
+⭐⭐⭐⭐
+</div>
+
+
+<a class="learn">
+Start Course
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="card business">
+
+
+<img src="https://images.unsplash.com/photo-1556761175-b413da4baf72">
+
+
+<div class="content">
+
+
+<span class="tag">
+Business
+</span>
+
+
+<h2>
+Entrepreneurship
+</h2>
+
+
+<p>
+Start and manage businesses.
+</p>
+
+
+<div class="rating">
+⭐⭐⭐⭐⭐
+</div>
+
+
+<a class="learn">
+Start Course
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<div class="card business">
+
+
+<img src="https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07">
+
+
+<div class="content">
+
+
+<span class="tag">
+Marketing
+</span>
+
+
+<h2>
+Digital Marketing
+</h2>
+
+
+<p>
+SEO and online marketing.
+</p>
+
+
+<div class="rating">
+⭐⭐⭐⭐⭐
+</div>
+
+
+<a class="learn">
+Start Course
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="card technology">
+
+
+<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3">
+
+
+<div class="content">
+
+
+<span class="tag">
+Mobile Development
+</span>
+
+
+<h2>
+Android App Development
+</h2>
+
+
+<p>
+Build mobile applications.
+</p>
+
+
+<div class="rating">
+⭐⭐⭐⭐⭐
+</div>
+
+
+<a class="learn">
+Start Course
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<footer>
+
+© 2026 VIATEURLEARN | Learn Without Limits
+
+</footer>
+
+
+
+
+
+
+
+<script>
+
+
+function filterCourse(category){
+
+
+let cards=document.querySelectorAll(".card");
+
+
+cards.forEach(card=>{
+
+
+if(category=="all" ||
+card.classList.contains(category)){
+
+
+card.style.display="block";
+
+
+}else{
+
+
+card.style.display="none";
+
+
+}
+
+
+});
+
+
+}
+
+
+
+
+
+function searchCourse(){
+
+
+let value=document
+.getElementById("search")
+.value
+.toLowerCase();
+
+
+
+let cards=document.querySelectorAll(".card");
+
+
+
+cards.forEach(card=>{
+
+
+let text=card.innerText.toLowerCase();
+
+
+if(text.includes(value)){
+
+card.style.display="block";
+
+}else{
+
+card.style.display="none";
+
+}
+
+
+});
+
+
+}
+
+
+
+</script>
+
+
+
+
+</body>
+</html>
