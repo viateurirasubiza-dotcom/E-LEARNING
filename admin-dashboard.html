@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VIATEURLEARN | Admin Dashboard</title>
+
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Segoe UI",sans-serif;
+}
+
+
+body{
+
+background:#f1f5f9;
+color:#1e293b;
+
+}
+
+
+
+/* SIDEBAR */
+
+.sidebar{
+
+position:fixed;
+width:280px;
+height:100vh;
+background:#020617;
+color:white;
+padding:30px 20px;
+
+}
+
+
+
+.logo{
+
+font-size:27px;
+font-weight:900;
+color:#38bdf8;
+margin-bottom:40px;
+
+}
+
+
+
+.menu a{
+
+display:block;
+padding:15px;
+margin-bottom:10px;
+border-radius:12px;
+text-decoration:none;
+color:#cbd5e1;
+
+}
+
+
+
+.menu a:hover{
+
+background:#2563eb;
+color:white;
+
+}
+
+
+
+
+
+/* MAIN */
+
+.main{
+
+margin-left:280px;
+padding:30px;
+
+}
+
+
+
+
+.topbar{
+
+background:white;
+padding:25px;
+border-radius:20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+
+
+.admin{
+
+display:flex;
+align-items:center;
+gap:15px;
+
+}
+
+
+.admin img{
+
+width:65px;
+height:65px;
+border-radius:50%;
+
+}
+
+
+
+
+
+/* STAT CARDS */
+
+.stats{
+
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(220px,1fr));
+
+gap:25px;
+margin-top:30px;
+
+}
+
+
+
+.stat{
+
+background:white;
+padding:25px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+
+
+.stat h1{
+
+font-size:40px;
+color:#2563eb;
+
+}
+
+
+
+
+
+/* SECTIONS */
+
+
+.section{
+
+margin-top:40px;
+
+}
+
+
+.section h2{
+
+margin-bottom:20px;
+
+}
+
+
+
+
+
+.grid{
+
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(260px,1fr));
+
+gap:25px;
+
+}
+
+
+
+
+
+.box{
+
+background:white;
+padding:25px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+
+
+.box button{
+
+background:#2563eb;
+color:white;
+border:none;
+padding:12px 25px;
+border-radius:25px;
+margin-top:15px;
+cursor:pointer;
+
+}
+
+
+
+
+
+/* TABLE */
+
+
+table{
+
+width:100%;
+background:white;
+border-collapse:collapse;
+border-radius:20px;
+overflow:hidden;
+
+}
+
+
+th{
+
+background:#2563eb;
+color:white;
+padding:15px;
+
+}
+
+
+
+td{
+
+padding:15px;
+border-bottom:1px solid #e2e8f0;
+
+}
+
+
+
+
+.status{
+
+color:#16a34a;
+font-weight:bold;
+
+}
+
+
+
+
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+.sidebar{
+
+position:relative;
+width:100%;
+height:auto;
+
+}
+
+
+.main{
+
+margin-left:0;
+
+}
+
+}
+
+
+
+</style>
+
+
+</head>
+
+
+
+
+<body>
+
+
+
+
+<div class="sidebar">
+
+
+<div class="logo">
+
+🎓 VIATEURLEARN
+
+</div>
+
+
+
+
+<div class="menu">
+
+
+<a href="#">
+🏠 Dashboard
+</a>
+
+
+<a href="#">
+👨‍🎓 Students
+</a>
+
+
+<a href="#">
+👨‍🏫 Teachers
+</a>
+
+
+<a href="#">
+📚 Courses
+</a>
+
+
+<a href="#">
+💰 Payments
+</a>
+
+
+<a href="#">
+📊 Reports
+</a>
+
+
+<a href="#">
+⚙ Settings
+</a>
+
+
+<a href="login.html">
+🚪 Logout
+</a>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="main">
+
+
+
+
+
+<div class="topbar">
+
+
+<div>
+
+<h1>
+Admin Control Center 👑
+</h1>
+
+<p>
+Manage VIATEURLEARN Platform
+</p>
+
+
+</div>
+
+
+
+
+<div class="admin">
+
+
+<img src="https://i.pravatar.cc/150">
+
+
+<div>
+
+<b>
+System Administrator
+</b>
+
+<br>
+
+VIATEURLEARN
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="stats">
+
+
+
+<div class="stat">
+
+<h1>
+12,500
+</h1>
+
+<p>
+Students
+</p>
+
+</div>
+
+
+
+
+
+<div class="stat">
+
+<h1>
+350
+</h1>
+
+<p>
+Teachers
+</p>
+
+</div>
+
+
+
+
+
+<div class="stat">
+
+<h1>
+850
+</h1>
+
+<p>
+Courses
+</p>
+
+</div>
+
+
+
+
+
+<div class="stat">
+
+<h1>
+$25K
+</h1>
+
+<p>
+Revenue
+</p>
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="section">
+
+
+<h2>
+⚡ Quick Management
+</h2>
+
+
+
+<div class="grid">
+
+
+
+
+
+<div class="box">
+
+
+<h2>
+👨‍🏫 Teacher Approval
+</h2>
+
+
+<p>
+Review new teacher accounts.
+</p>
+
+
+<button>
+Approve Teachers
+</button>
+
+
+</div>
+
+
+
+
+
+<div class="box">
+
+
+<h2>
+📚 Course Management
+</h2>
+
+
+<p>
+Approve and manage courses.
+</p>
+
+
+<button>
+Manage Courses
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="box">
+
+
+<h2>
+📢 Announcements
+</h2>
+
+
+<p>
+Send messages to users.
+</p>
+
+
+<button>
+Create Announcement
+</button>
+
+
+</div>
+
+
+
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="section">
+
+
+<h2>
+👨‍🎓 Recent Students
+</h2>
+
+
+
+<table>
+
+
+<tr>
+
+<th>
+Name
+</th>
+
+
+<th>
+Email
+</th>
+
+
+<th>
+Status
+</th>
+
+
+</tr>
+
+
+
+<tr>
+
+<td>
+Jean Claude
+</td>
+
+<td>
+student@gmail.com
+</td>
+
+<td class="status">
+Active
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>
+Aline Mukamana
+</td>
+
+<td>
+aline@gmail.com
+</td>
+
+<td class="status">
+Active
+</td>
+
+</tr>
+
+
+
+
+<tr>
+
+<td>
+Eric Uwase
+</td>
+
+<td>
+eric@gmail.com
+</td>
+
+<td class="status">
+Active
+</td>
+
+</tr>
+
+
+</table>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="section">
+
+
+<h2>
+📊 Platform Activity
+</h2>
+
+
+
+<div class="box">
+
+
+<p>
+✅ 25 New Students registered today
+</p>
+
+<br>
+
+
+<p>
+🎥 40 New Lessons uploaded
+</p>
+
+
+<br>
+
+
+<p>
+🏆 15 Certificates generated
+</p>
+
+
+<br>
+
+
+<p>
+💳 30 Payments completed
+</p>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+</body>
+
+</html>
