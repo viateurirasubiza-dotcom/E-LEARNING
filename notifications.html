@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VIATEURLEARN | Notifications</title>
+
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Segoe UI",sans-serif;
+}
+
+
+body{
+
+background:#f1f5f9;
+color:#1e293b;
+
+}
+
+
+
+/* HEADER */
+
+header{
+
+background:#0f172a;
+color:white;
+height:80px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 8%;
+
+}
+
+
+
+.logo{
+
+font-size:28px;
+font-weight:900;
+color:#60a5fa;
+
+}
+
+
+
+nav a{
+
+color:white;
+text-decoration:none;
+margin-left:20px;
+
+}
+
+
+
+
+
+.container{
+
+padding:40px 8%;
+
+}
+
+
+
+
+.top{
+
+background:linear-gradient(
+135deg,
+#2563eb,
+#0f172a
+);
+
+color:white;
+padding:40px;
+border-radius:25px;
+
+}
+
+
+
+.top h1{
+
+font-size:45px;
+
+}
+
+
+
+
+
+.filters{
+
+margin:30px 0;
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+
+}
+
+
+
+.filters button{
+
+padding:12px 25px;
+border:none;
+border-radius:30px;
+background:#dbeafe;
+cursor:pointer;
+
+}
+
+
+
+.filters button:hover{
+
+background:#2563eb;
+color:white;
+
+}
+
+
+
+
+
+.notification{
+
+background:white;
+padding:25px;
+border-radius:20px;
+margin-bottom:20px;
+display:flex;
+align-items:center;
+gap:20px;
+
+box-shadow:
+0 10px 25px rgba(0,0,0,.08);
+
+cursor:pointer;
+
+}
+
+
+
+.icon{
+
+width:60px;
+height:60px;
+background:#dbeafe;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:30px;
+
+}
+
+
+
+.notification h3{
+
+margin-bottom:8px;
+
+}
+
+
+
+.time{
+
+color:#64748b;
+font-size:14px;
+
+}
+
+
+
+.unread{
+
+border-left:6px solid #2563eb;
+
+}
+
+
+
+
+.badge{
+
+background:#dc2626;
+color:white;
+padding:5px 12px;
+border-radius:20px;
+
+}
+
+
+
+
+
+.empty{
+
+text-align:center;
+padding:40px;
+background:white;
+border-radius:20px;
+display:none;
+
+}
+
+
+
+
+@media(max-width:700px){
+
+
+.top h1{
+
+font-size:32px;
+
+}
+
+
+}
+
+
+</style>
+
+</head>
+
+
+
+<body>
+
+
+
+
+<header>
+
+
+<div class="logo">
+
+🎓 VIATEURLEARN
+
+</div>
+
+
+
+<nav>
+
+<a href="student-dashboard.html">
+Dashboard
+</a>
+
+
+<a href="messages.html">
+Messages
+</a>
+
+
+</nav>
+
+
+</header>
+
+
+
+
+
+
+
+
+
+<div class="container">
+
+
+
+
+
+<div class="top">
+
+
+<h1>
+🔔 Notifications
+</h1>
+
+
+<p>
+Stay updated with your learning activities
+</p>
+
+
+<br>
+
+
+<span class="badge">
+5 New
+</span>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="filters">
+
+
+<button onclick="showAll()">
+All
+</button>
+
+
+<button onclick="showUnread()">
+Unread
+</button>
+
+
+<button>
+Courses
+</button>
+
+
+<button>
+Certificates
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div id="notificationList">
+
+
+
+
+
+<div class="notification unread">
+
+
+<div class="icon">
+📚
+</div>
+
+
+<div>
+
+
+<h3>
+New Course Available
+</h3>
+
+
+<p>
+Artificial Intelligence course has been added.
+</p>
+
+
+<span class="time">
+Today 09:30 AM
+</span>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="notification unread">
+
+
+<div class="icon">
+📝
+</div>
+
+
+<div>
+
+
+<h3>
+Quiz Reminder
+</h3>
+
+
+<p>
+Your Python Programming quiz is ready.
+</p>
+
+
+<span class="time">
+Today 08:00 AM
+</span>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="notification">
+
+
+<div class="icon">
+🏆
+</div>
+
+
+<div>
+
+
+<h3>
+Certificate Generated
+</h3>
+
+
+<p>
+Your Web Development certificate is available.
+</p>
+
+
+<span class="time">
+Yesterday
+</span>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="notification">
+
+
+<div class="icon">
+👨‍🏫
+</div>
+
+
+<div>
+
+
+<h3>
+Teacher Announcement
+</h3>
+
+
+<p>
+New JavaScript lesson uploaded.
+</p>
+
+
+<span class="time">
+Yesterday
+</span>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="notification">
+
+
+<div class="icon">
+⚙️
+</div>
+
+
+<div>
+
+
+<h3>
+System Update
+</h3>
+
+
+<p>
+VIATEURLEARN platform updated successfully.
+</p>
+
+
+<span class="time">
+2 days ago
+</span>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+<div class="empty" id="empty">
+
+No notifications found 🔔
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<script>
+
+
+function showUnread(){
+
+
+let all=document.querySelectorAll(".notification");
+
+
+let count=0;
+
+
+all.forEach(n=>{
+
+
+if(n.classList.contains("unread")){
+
+n.style.display="flex";
+
+count++;
+
+}
+
+else{
+
+n.style.display="none";
+
+}
+
+
+});
+
+
+if(count==0){
+
+document.getElementById("empty")
+.style.display="block";
+
+}
+
+
+}
+
+
+
+
+
+function showAll(){
+
+
+document.querySelectorAll(".notification")
+.forEach(n=>{
+
+
+n.style.display="flex";
+
+
+});
+
+
+document.getElementById("empty")
+.style.display="none";
+
+
+}
+
+
+
+</script>
+
+
+
+</body>
+
+</html>
