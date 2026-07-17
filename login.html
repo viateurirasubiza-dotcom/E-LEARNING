@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VIATEURLEARN | Login</title>
+
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+
+
+body{
+
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#2563eb,#0f172a);
+
+}
+
+
+
+/* LOGIN BOX */
+
+.login-box{
+
+background:white;
+width:420px;
+padding:40px;
+border-radius:25px;
+box-shadow:0 20px 50px rgba(0,0,0,.3);
+
+}
+
+
+
+.logo{
+
+text-align:center;
+font-size:30px;
+font-weight:800;
+color:#2563eb;
+margin-bottom:10px;
+
+}
+
+
+
+.subtitle{
+
+text-align:center;
+color:#64748b;
+margin-bottom:30px;
+
+}
+
+
+
+
+label{
+
+font-weight:600;
+display:block;
+margin-bottom:8px;
+
+}
+
+
+
+input,
+select{
+
+
+width:100%;
+padding:14px;
+margin-bottom:20px;
+border-radius:12px;
+border:1px solid #cbd5e1;
+font-size:16px;
+
+}
+
+
+
+
+button{
+
+
+width:100%;
+padding:15px;
+border:none;
+border-radius:30px;
+background:#2563eb;
+color:white;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+
+
+}
+
+
+button:hover{
+
+background:#1d4ed8;
+
+}
+
+
+
+
+.register{
+
+text-align:center;
+margin-top:20px;
+
+}
+
+
+
+.register a{
+
+color:#2563eb;
+text-decoration:none;
+font-weight:bold;
+
+}
+
+
+
+
+.message{
+
+text-align:center;
+margin-top:15px;
+font-weight:bold;
+
+}
+
+
+
+
+
+</style>
+
+
+</head>
+
+
+
+<body>
+
+
+
+
+<div class="login-box">
+
+
+<div class="logo">
+
+🎓 VIATEURLEARN
+
+</div>
+
+
+<div class="subtitle">
+
+Login to continue learning
+
+</div>
+
+
+
+
+<label>
+Select Account Type
+</label>
+
+
+<select id="role">
+
+
+<option value="">
+Choose Role
+</option>
+
+
+<option value="student">
+Student
+</option>
+
+
+<option value="teacher">
+Teacher
+</option>
+
+
+<option value="admin">
+Admin
+</option>
+
+
+</select>
+
+
+
+
+
+<label>
+Email
+</label>
+
+
+<input 
+type="email"
+id="email"
+placeholder="Enter email">
+
+
+
+
+
+<label>
+Password
+</label>
+
+
+<input 
+type="password"
+id="password"
+placeholder="Enter password">
+
+
+
+
+
+<button onclick="login()">
+
+Login 🚀
+
+</button>
+
+
+
+
+<div class="message" id="message">
+
+</div>
+
+
+
+
+<div class="register">
+
+Don't have account?
+
+<a href="register.html">
+Register
+</a>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+<script>
+
+
+function login(){
+
+
+let role =
+document.getElementById("role").value;
+
+
+let email =
+document.getElementById("email").value;
+
+
+let password =
+document.getElementById("password").value;
+
+
+
+
+if(role=="" || email=="" || password==""){
+
+
+document.getElementById("message").innerHTML=
+"⚠️ Fill all fields";
+
+
+return;
+
+}
+
+
+
+
+// Temporary login system
+// Firebase tuzayongeraho nyuma
+
+
+if(role=="student"){
+
+
+window.location.href="student-dashboard.html";
+
+
+}
+
+
+
+else if(role=="teacher"){
+
+
+window.location.href="teacher-dashboard.html";
+
+
+}
+
+
+
+else if(role=="admin"){
+
+
+window.location.href="admin-dashboard.html";
+
+
+}
+
+
+
+}
+
+
+
+</script>
+
+
+
+
+</body>
+
+</html>
