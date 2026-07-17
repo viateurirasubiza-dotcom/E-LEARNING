@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VIATEURLEARN | Teacher Dashboard</title>
+
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Segoe UI",sans-serif;
+}
+
+
+body{
+
+background:#f1f5f9;
+color:#1e293b;
+
+}
+
+
+/* SIDEBAR */
+
+.sidebar{
+
+position:fixed;
+width:270px;
+height:100vh;
+background:#0f172a;
+padding:30px 20px;
+color:white;
+
+}
+
+
+.logo{
+
+font-size:26px;
+font-weight:900;
+color:#60a5fa;
+margin-bottom:40px;
+
+}
+
+
+
+.menu a{
+
+display:block;
+text-decoration:none;
+color:#cbd5e1;
+padding:15px;
+border-radius:12px;
+margin-bottom:10px;
+
+}
+
+
+
+.menu a:hover{
+
+background:#2563eb;
+color:white;
+
+}
+
+
+
+/* MAIN */
+
+
+.main{
+
+margin-left:270px;
+padding:30px;
+
+}
+
+
+
+.top{
+
+background:white;
+padding:25px;
+border-radius:20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+
+
+
+.profile{
+
+display:flex;
+align-items:center;
+gap:15px;
+
+}
+
+
+
+.profile img{
+
+width:65px;
+height:65px;
+border-radius:50%;
+
+}
+
+
+
+
+
+/* STATISTICS */
+
+
+.stats{
+
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(220px,1fr));
+
+gap:25px;
+margin-top:30px;
+
+}
+
+
+
+
+.card{
+
+background:white;
+padding:25px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+
+
+
+.card h1{
+
+color:#2563eb;
+font-size:40px;
+
+}
+
+
+
+
+
+/* ACTIONS */
+
+
+.actions{
+
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
+
+gap:25px;
+margin-top:30px;
+
+}
+
+
+
+
+.action{
+
+background:white;
+padding:30px;
+border-radius:20px;
+transition:.3s;
+
+}
+
+
+.action:hover{
+
+transform:translateY(-8px);
+
+}
+
+
+.action button{
+
+margin-top:20px;
+background:#2563eb;
+color:white;
+border:none;
+padding:13px 25px;
+border-radius:30px;
+cursor:pointer;
+
+}
+
+
+
+
+
+/* TABLE */
+
+
+table{
+
+width:100%;
+background:white;
+border-radius:20px;
+overflow:hidden;
+border-collapse:collapse;
+
+}
+
+
+
+th{
+
+background:#2563eb;
+color:white;
+padding:15px;
+
+}
+
+
+td{
+
+padding:15px;
+border-bottom:1px solid #e2e8f0;
+
+}
+
+
+
+
+
+/* FORM */
+
+
+input,
+textarea,
+select{
+
+width:100%;
+padding:13px;
+margin-top:10px;
+border-radius:10px;
+border:1px solid #cbd5e1;
+
+}
+
+
+
+.submit{
+
+background:#2563eb;
+color:white;
+border:none;
+padding:14px;
+border-radius:30px;
+margin-top:15px;
+
+}
+
+
+
+
+@media(max-width:800px){
+
+.sidebar{
+
+position:relative;
+width:100%;
+height:auto;
+
+}
+
+
+.main{
+
+margin-left:0;
+
+}
+
+}
+
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+
+
+<!-- SIDEBAR -->
+
+
+<div class="sidebar">
+
+
+<div class="logo">
+🎓 VIATEURLEARN
+</div>
+
+
+
+<div class="menu">
+
+
+<a href="#">
+🏠 Dashboard
+</a>
+
+
+<a href="#">
+📚 My Courses
+</a>
+
+
+<a href="#">
+➕ Create Course
+</a>
+
+
+<a href="#">
+🎥 Upload Lessons
+</a>
+
+
+<a href="#">
+📝 Create Quiz
+</a>
+
+
+<a href="#">
+👨‍🎓 Students
+</a>
+
+
+<a href="login.html">
+🚪 Logout
+</a>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="main">
+
+
+
+
+
+<div class="top">
+
+
+<div>
+
+<h1>
+Welcome Teacher 👨‍🏫
+</h1>
+
+
+<p>
+Manage your courses and students
+</p>
+
+
+</div>
+
+
+
+<div class="profile">
+
+
+<img src="https://i.pravatar.cc/120">
+
+
+<div>
+
+<b>
+Computer Science Teacher
+</b>
+
+<br>
+
+VIATEURLEARN Instructor
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="stats">
+
+
+<div class="card">
+
+<h1>
+15
+</h1>
+
+<p>
+Courses Created
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h1>
+540
+</h1>
+
+<p>
+Total Students
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h1>
+35
+</h1>
+
+<p>
+Lessons Uploaded
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h1>
+92%
+</h1>
+
+<p>
+Student Satisfaction
+</p>
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+<h2 style="margin-top:40px">
+🚀 Teacher Tools
+</h2>
+
+
+
+
+
+<div class="actions">
+
+
+
+<div class="action">
+
+
+<h2>
+➕ Create Course
+</h2>
+
+
+<p>
+Create new learning content.
+</p>
+
+
+<button>
+Create Now
+</button>
+
+
+</div>
+
+
+
+
+
+<div class="action">
+
+
+<h2>
+🎥 Upload Lesson
+</h2>
+
+
+<p>
+Upload video lessons and notes.
+</p>
+
+
+<button>
+Upload
+</button>
+
+
+</div>
+
+
+
+
+
+<div class="action">
+
+
+<h2>
+📝 Create Quiz
+</h2>
+
+
+<p>
+Prepare assessments for students.
+</p>
+
+
+<button>
+Create Quiz
+</button>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<h2 style="margin-top:40px">
+📚 My Courses
+</h2>
+
+
+
+
+<table>
+
+
+<tr>
+
+<th>
+Course
+</th>
+
+<th>
+Students
+</th>
+
+<th>
+Status
+</th>
+
+</tr>
+
+
+
+
+<tr>
+
+<td>
+Web Development
+</td>
+
+<td>
+250
+</td>
+
+<td>
+Active
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>
+Python Programming
+</td>
+
+<td>
+180
+</td>
+
+<td>
+Active
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>
+Artificial Intelligence
+</td>
+
+<td>
+110
+</td>
+
+<td>
+Draft
+</td>
+
+</tr>
+
+
+
+</table>
+
+
+
+
+
+
+
+
+
+<h2 style="margin-top:40px">
+📤 Upload New Lesson
+</h2>
+
+
+
+
+
+<div class="card">
+
+
+<label>
+Lesson Title
+</label>
+
+
+<input placeholder="Enter lesson title">
+
+
+
+<label>
+Description
+</label>
+
+
+<textarea placeholder="Lesson description"></textarea>
+
+
+
+
+<label>
+Upload Video/PDF
+</label>
+
+
+<input type="file">
+
+
+
+<button class="submit">
+
+Upload Lesson
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+</body>
+
+</html>
