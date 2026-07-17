@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VIATEURLEARN | Student Dashboard</title>
+
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Segoe UI",sans-serif;
+}
+
+
+body{
+
+background:#f1f5f9;
+color:#1e293b;
+
+}
+
+
+
+/* SIDEBAR */
+
+
+.sidebar{
+
+position:fixed;
+width:260px;
+height:100vh;
+background:#0f172a;
+color:white;
+padding:30px 20px;
+
+}
+
+
+
+.logo{
+
+font-size:25px;
+font-weight:900;
+color:#60a5fa;
+margin-bottom:40px;
+
+}
+
+
+
+.menu a{
+
+display:block;
+padding:15px;
+margin-bottom:10px;
+text-decoration:none;
+color:#cbd5e1;
+border-radius:12px;
+
+}
+
+
+
+.menu a:hover{
+
+background:#2563eb;
+color:white;
+
+}
+
+
+
+
+/* MAIN */
+
+
+.main{
+
+margin-left:260px;
+padding:30px;
+
+}
+
+
+
+
+
+.topbar{
+
+background:white;
+padding:25px;
+border-radius:20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+
+
+.profile{
+
+display:flex;
+align-items:center;
+gap:15px;
+
+}
+
+
+.profile img{
+
+width:60px;
+height:60px;
+border-radius:50%;
+
+}
+
+
+
+
+
+
+/* CARDS */
+
+
+.stats{
+
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(220px,1fr));
+
+gap:25px;
+margin-top:30px;
+
+}
+
+
+
+.stat-card{
+
+background:white;
+padding:25px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+
+
+.stat-card h2{
+
+color:#2563eb;
+font-size:35px;
+
+}
+
+
+
+
+
+/* COURSES */
+
+
+.section{
+
+margin-top:35px;
+
+}
+
+
+
+.section h2{
+
+margin-bottom:20px;
+
+}
+
+
+
+.course-grid{
+
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(280px,1fr));
+
+gap:25px;
+
+}
+
+
+
+
+.course{
+
+background:white;
+padding:25px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+
+
+
+.progress{
+
+height:10px;
+background:#e2e8f0;
+border-radius:20px;
+margin:15px 0;
+
+}
+
+
+
+.progress span{
+
+display:block;
+height:100%;
+background:#2563eb;
+border-radius:20px;
+
+}
+
+
+
+
+.button{
+
+display:inline-block;
+background:#2563eb;
+color:white;
+padding:12px 25px;
+border-radius:25px;
+text-decoration:none;
+
+}
+
+
+
+
+/* CERTIFICATE */
+
+
+.certificate{
+
+background:
+linear-gradient(
+135deg,
+#2563eb,
+#0f172a
+);
+
+color:white;
+padding:30px;
+border-radius:25px;
+
+}
+
+
+
+
+/* MOBILE */
+
+
+@media(max-width:800px){
+
+
+.sidebar{
+
+position:relative;
+width:100%;
+height:auto;
+
+}
+
+
+.main{
+
+margin-left:0;
+
+}
+
+
+}
+
+
+
+</style>
+
+
+</head>
+
+
+
+<body>
+
+
+
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+
+<div class="logo">
+
+🎓 VIATEURLEARN
+
+</div>
+
+
+
+<div class="menu">
+
+
+<a href="#">
+🏠 Dashboard
+</a>
+
+
+<a href="courses.html">
+📚 My Courses
+</a>
+
+
+<a href="#">
+📝 Quizzes
+</a>
+
+
+<a href="#">
+🏆 Certificates
+</a>
+
+
+<a href="#">
+⚙ Settings
+</a>
+
+
+<a href="login.html">
+🚪 Logout
+</a>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+<!-- MAIN -->
+
+
+<div class="main">
+
+
+
+
+
+<div class="topbar">
+
+
+<div>
+
+<h1>
+Welcome Back, Viateur 👋
+</h1>
+
+
+<p>
+Continue your learning journey
+</p>
+
+</div>
+
+
+
+
+<div class="profile">
+
+
+<img src="https://i.pravatar.cc/100">
+
+
+<div>
+
+<b>
+Student
+</b>
+
+<br>
+
+Computer Science
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<!-- STATISTICS -->
+
+
+<div class="stats">
+
+
+<div class="stat-card">
+
+<h2>
+8
+</h2>
+
+<p>
+Enrolled Courses
+</p>
+
+</div>
+
+
+
+
+
+<div class="stat-card">
+
+<h2>
+5
+</h2>
+
+<p>
+Completed Courses
+</p>
+
+</div>
+
+
+
+
+
+<div class="stat-card">
+
+<h2>
+12
+</h2>
+
+<p>
+Certificates
+</p>
+
+</div>
+
+
+
+
+
+<div class="stat-card">
+
+<h2>
+85%
+</h2>
+
+<p>
+Average Score
+</p>
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<section class="section">
+
+
+<h2>
+📚 My Learning Courses
+</h2>
+
+
+
+<div class="course-grid">
+
+
+
+
+
+
+<div class="course">
+
+<h3>
+💻 Web Development
+</h3>
+
+
+<p>
+HTML, CSS, JavaScript
+</p>
+
+
+
+<div class="progress">
+
+<span style="width:75%"></span>
+
+</div>
+
+
+<p>
+75% Completed
+</p>
+
+
+<a class="button">
+Continue
+</a>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="course">
+
+<h3>
+🐍 Python Programming
+</h3>
+
+
+<p>
+Programming Fundamentals
+</p>
+
+
+
+<div class="progress">
+
+<span style="width:50%"></span>
+
+</div>
+
+
+<p>
+50% Completed
+</p>
+
+
+<a class="button">
+Continue
+</a>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="course">
+
+<h3>
+🤖 Artificial Intelligence
+</h3>
+
+
+<p>
+Machine Learning Basics
+</p>
+
+
+
+<div class="progress">
+
+<span style="width:30%"></span>
+
+</div>
+
+
+<p>
+30% Completed
+</p>
+
+
+<a class="button">
+Continue
+</a>
+
+
+</div>
+
+
+
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<section class="section">
+
+
+<h2>
+🏆 Latest Certificate
+</h2>
+
+
+
+<div class="certificate">
+
+
+<h2>
+Web Development Certificate
+</h2>
+
+
+<p>
+
+Congratulations! You completed Full Stack Web Development.
+
+</p>
+
+
+<br>
+
+
+<a class="button">
+Download Certificate
+
+</a>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+<section class="section">
+
+
+<h2>
+🔔 Notifications
+</h2>
+
+
+<div class="course">
+
+
+<p>
+✅ New Python lesson uploaded
+</p>
+
+<hr><br>
+
+<p>
+🎯 Quiz available for Mathematics
+</p>
+
+
+<hr><br>
+
+
+<p>
+🏆 Certificate ready
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+</body>
+
+</html>
