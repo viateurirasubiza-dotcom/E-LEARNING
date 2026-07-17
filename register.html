@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VIATEURLEARN | Register</title>
+
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+
+
+body{
+
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#0f172a,#2563eb);
+
+}
+
+
+
+/* REGISTER CARD */
+
+.register-box{
+
+background:white;
+width:450px;
+padding:40px;
+border-radius:25px;
+box-shadow:0 20px 50px rgba(0,0,0,.3);
+
+}
+
+
+
+.logo{
+
+text-align:center;
+font-size:30px;
+font-weight:800;
+color:#2563eb;
+margin-bottom:10px;
+
+}
+
+
+
+.subtitle{
+
+text-align:center;
+color:#64748b;
+margin-bottom:30px;
+
+}
+
+
+
+
+label{
+
+font-weight:600;
+display:block;
+margin-bottom:7px;
+
+}
+
+
+
+
+input,
+select{
+
+
+width:100%;
+padding:13px;
+margin-bottom:18px;
+border-radius:12px;
+border:1px solid #cbd5e1;
+font-size:16px;
+
+
+}
+
+
+
+
+button{
+
+
+width:100%;
+padding:15px;
+border:none;
+border-radius:30px;
+background:#2563eb;
+color:white;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+
+}
+
+
+
+button:hover{
+
+background:#1d4ed8;
+
+}
+
+
+
+
+.login-link{
+
+text-align:center;
+margin-top:20px;
+
+}
+
+
+
+.login-link a{
+
+color:#2563eb;
+font-weight:bold;
+text-decoration:none;
+
+}
+
+
+
+.message{
+
+text-align:center;
+margin-top:15px;
+font-weight:bold;
+
+}
+
+
+
+</style>
+
+
+</head>
+
+
+
+
+<body>
+
+
+
+
+<div class="register-box">
+
+
+
+<div class="logo">
+
+🎓 VIATEURLEARN
+
+</div>
+
+
+<div class="subtitle">
+
+Create your learning account
+
+</div>
+
+
+
+
+
+<label>
+Full Name
+</label>
+
+<input 
+type="text"
+id="name"
+placeholder="Enter your name">
+
+
+
+
+
+<label>
+Email Address
+</label>
+
+<input 
+type="email"
+id="email"
+placeholder="Enter email">
+
+
+
+
+
+<label>
+Phone Number
+</label>
+
+<input 
+type="text"
+id="phone"
+placeholder="Enter phone number">
+
+
+
+
+
+<label>
+Account Type
+</label>
+
+
+<select id="role">
+
+
+<option value="">
+Select Role
+</option>
+
+
+<option value="student">
+Student
+</option>
+
+
+<option value="teacher">
+Teacher
+</option>
+
+
+</select>
+
+
+
+
+
+<label>
+Password
+</label>
+
+<input 
+type="password"
+id="password"
+placeholder="Create password">
+
+
+
+
+
+<label>
+Confirm Password
+</label>
+
+<input 
+type="password"
+id="confirm"
+placeholder="Confirm password">
+
+
+
+
+
+<button onclick="registerUser()">
+
+Create Account 🚀
+
+</button>
+
+
+
+
+<div class="message" id="message">
+
+</div>
+
+
+
+
+<div class="login-link">
+
+Already have account?
+
+<a href="login.html">
+Login
+</a>
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+<script>
+
+
+function registerUser(){
+
+
+let name =
+document.getElementById("name").value;
+
+
+let email =
+document.getElementById("email").value;
+
+
+let phone =
+document.getElementById("phone").value;
+
+
+let role =
+document.getElementById("role").value;
+
+
+let password =
+document.getElementById("password").value;
+
+
+let confirm =
+document.getElementById("confirm").value;
+
+
+
+
+if(
+name=="" ||
+email=="" ||
+phone=="" ||
+role=="" ||
+password==""
+){
+
+
+document.getElementById("message").innerHTML=
+"⚠️ Please fill all fields";
+
+
+return;
+
+}
+
+
+
+
+
+if(password !== confirm){
+
+
+document.getElementById("message").innerHTML=
+"❌ Passwords do not match";
+
+
+return;
+
+
+}
+
+
+
+
+
+// Temporary local registration
+// Firebase tuzongeraho
+
+
+let user={
+
+name:name,
+email:email,
+phone:phone,
+role:role
+
+};
+
+
+
+localStorage.setItem(
+"viateurlearn_user",
+JSON.stringify(user)
+);
+
+
+
+document.getElementById("message").innerHTML=
+"✅ Account created successfully";
+
+
+
+setTimeout(()=>{
+
+window.location.href="login.html";
+
+},1500);
+
+
+
+}
+
+
+
+</script>
+
+
+
+
+</body>
+
+</html>
