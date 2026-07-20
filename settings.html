@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VIATEURLEARN | Settings</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Segoe UI",sans-serif;
+}
+
+body{
+background:#f1f5f9;
+color:#1e293b;
+}
+
+.container{
+max-width:900px;
+margin:40px auto;
+padding:20px;
+}
+
+.header{
+background:#2563eb;
+color:white;
+padding:25px;
+border-radius:20px;
+margin-bottom:30px;
+}
+
+.card{
+background:white;
+padding:25px;
+margin-bottom:25px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.card h2{
+margin-bottom:20px;
+color:#2563eb;
+}
+
+label{
+display:block;
+margin-top:15px;
+margin-bottom:8px;
+font-weight:bold;
+}
+
+input,select{
+width:100%;
+padding:14px;
+border:1px solid #ddd;
+border-radius:10px;
+font-size:16px;
+}
+
+button{
+margin-top:20px;
+padding:14px 25px;
+border:none;
+border-radius:10px;
+background:#2563eb;
+color:white;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+background:#1d4ed8;
+}
+
+.back{
+display:inline-block;
+margin-bottom:20px;
+text-decoration:none;
+color:#2563eb;
+font-weight:bold;
+}
+
+.success{
+display:none;
+margin-top:15px;
+color:green;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<a href="dashboard.html" class="back">
+← Back to Dashboard
+</a>
+
+<div class="header">
+
+<h1>⚙ Account Settings</h1>
+
+<p>Manage your VIATEURLEARN account.</p>
+
+</div>
+
+<div class="card">
+
+<h2>👤 Profile Information</h2>
+
+<label>Full Name</label>
+
+<input
+type="text"
+id="name"
+placeholder="Your Name">
+
+<label>Email</label>
+
+<input
+type="email"
+id="email"
+placeholder="example@email.com">
+
+<button onclick="saveProfile()">
+Save Profile
+</button>
+
+<p class="success" id="profileSuccess">
+✅ Profile updated successfully.
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>🔒 Change Password</h2>
+
+<label>Current Password</label>
+
+<input
+type="password"
+id="oldPassword">
+
+<label>New Password</label>
+
+<input
+type="password"
+id="newPassword">
+
+<label>Confirm Password</label>
+
+<input
+type="password"
+id="confirmPassword">
+
+<button onclick="changePassword()">
+Update Password
+</button>
+
+<p class="success" id="passwordSuccess">
+✅ Password updated successfully.
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>🎨 Appearance</h2>
+
+<label>Theme</label>
+
+<select id="theme">
+
+<option value="light">
+Light Mode
+</option>
+
+<option value="dark">
+Dark Mode
+</option>
+
+</select>
+
+<button onclick="saveTheme()">
+Save Theme
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+window.onload=function(){
+
+document.getElementById("name").value=
+localStorage.getItem("studentName")||"";
+
+document.getElementById("email").value=
+localStorage.getItem("studentEmail")||"";
+
+document.getElementById("theme").value=
+localStorage.getItem("theme")||"light";
+
+if(localStorage.getItem("theme")=="dark"){
+
+document.body.style.background="#0f172a";
+document.body.style.color="white";
+
+}
+
+}
+
+function saveProfile(){
+
+localStorage.setItem(
+"studentName",
+document.getElementById("name").value
+);
+
+localStorage.setItem(
+"studentEmail",
+document.getElementById("email").value
+);
+
+document.getElementById("profileSuccess").style.display="block";
+
+}
+
+function changePassword(){
+
+let newPass=
+document.getElementById("newPassword").value;
+
+let confirm=
+document.getElementById("confirmPassword").value;
+
+if(newPass!==confirm){
+
+alert("Passwords do not match.");
+
+return;
+
+}
+
+localStorage.setItem(
+"studentPassword",
+newPass
+);
+
+document.getElementById("passwordSuccess").style.display="block";
+
+}
+
+function saveTheme(){
+
+let theme=
+document.getElementById("theme").value;
+
+localStorage.setItem(
+"theme",
+theme);
+
+if(theme=="dark"){
+
+document.body.style.background="#0f172a";
+document.body.style.color="white";
+
+}else{
+
+document.body.style.background="#f1f5f9";
+document.body.style.color="#1e293b";
+
+}
+
+alert("Theme saved successfully.");
+
+}
+
+</script>
+
+</body>
+</html>
